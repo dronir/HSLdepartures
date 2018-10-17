@@ -1,0 +1,26 @@
+
+table {
+    border: 1px;
+    font-family: sans-serif;
+}
+
+th {
+    font-weight: bold;
+}
+
+td {
+    background: lightblue;
+    padding: 0.2em;
+}
+
+td.route {
+    font-size: x-large;
+}
+
+td.note {
+    width: 10em;
+}
+
+td.headsign {
+    font-size: small;
+}

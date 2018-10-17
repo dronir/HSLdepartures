@@ -1,0 +1,16 @@
+{
+  stops(name: "$ID") {
+    stoptimesWithoutPatterns(numberOfDepartures: $N) {
+      stop {name}
+      serviceDay
+      scheduledDeparture
+      realtimeDeparture
+      trip {
+        route {
+          shortName
+        }
+      }
+      headsign
+    }
+  }
+}

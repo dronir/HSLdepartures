@@ -56,12 +56,16 @@ def parse_html(json):
                                                    headsign=headsign, note=note)
     
 def main():
-    stops = [int(n) for n in argv[2:]]
+    stops = [int(n) for n in argv[1:]]
     print(HTML_HEADER)
-    data = get_stop_departures(3030, 5)
-    parsed = parse_departures(data)
-    for k in sorted(parsed.keys()):
-        print(parsed[k])
+    
+    Departures = []
+    for stop in stops:
+        data = get_stop_departures(stop, 5)
+        Departures.append(parse_departures(data))
+    final_data = merge_dicts(*Departures)
+    for k in sorted(final_data.keys()):
+        print(final_data[k])
     print(HTML_FOOTER)
 
 if __name__=="__main__":

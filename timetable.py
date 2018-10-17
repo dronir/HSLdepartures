@@ -38,7 +38,7 @@ def parse_departures(data):
     "Parse response JSON into HTML strings indexed by timestamps."
     departure_list = data["data"]["stops"][0]["stoptimesWithoutPatterns"]
     times_and_html = [parse_html(json) for json in departure_list]
-    Departures = {timestamp : html for (timestamp, html) in times_and_html}
+    Departures = [(timestamp, html) for (timestamp, html) in times_and_html]
     return Departures
 
 def parse_html(json):
@@ -62,10 +62,9 @@ def main():
     Departures = []
     for stop in stops:
         data = get_stop_departures(stop, 5)
-        Departures.append(parse_departures(data))
-    final_data = merge_dicts(*Departures)
-    for k in sorted(final_data.keys()):
-        print(final_data[k])
+        Departures += parse_departures(data)
+    for timestamp, html in sorted(Departures):
+        print(html)
     print(HTML_FOOTER)
 
 if __name__=="__main__":

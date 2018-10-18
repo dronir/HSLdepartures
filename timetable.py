@@ -9,16 +9,6 @@ REQUEST_TEMPLATE = Template(open("request_template.txt", "r").read())
 URL = "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql"
 UTC_OFFSET = timedelta(hours=3)
 
-def merge_dicts(*dict_args):
-    """
-    Given any number of dicts, shallow copy and merge into a new dict,
-    precedence goes to key value pairs in latter dicts.
-    """
-    result = {}
-    for dictionary in dict_args:
-        result.update(dictionary)
-    return result
-
 def get_stop_departures(stopID, N=1):
     "Get the next N departures from given stop as JSON."
     data = REQUEST_TEMPLATE.substitute(ID=stopID, N=N)

@@ -39,7 +39,7 @@ def parse_html(json):
     stop = json["stop"]["name"]
     time = scheduled.strftime("%H:%M")
     if abs(scheduled - realtime) > timedelta(minutes=1):
-        note = "Estimated: " + realtime.strftime("%H:%M")
+        note = "Estimated: {}".format(realtime.strftime("%H:%M"))
     else:
         note = ""
     return scheduled, HTML_ROW_TEMPLATE.substitute(time=time, name=name, stop=stop,

@@ -25,11 +25,9 @@ def get_timestamp(departure):
     return datetime_scheduled + UTC_OFFSET, datetime_realtime + UTC_OFFSET
 
 def parse_departures(data):
-    "Parse response JSON into HTML strings indexed by timestamps."
+    "Parse response JSON into (timestamp, HTML string) pairs."
     departure_list = data["data"]["stops"][0]["stoptimesWithoutPatterns"]
-    times_and_html = [parse_html(json) for json in departure_list]
-    Departures = [(timestamp, html) for (timestamp, html) in times_and_html]
-    return Departures
+    return [parse_html(json) for json in departure_list]
 
 def parse_html(json):
     "Make HTML string out of departure JSON."

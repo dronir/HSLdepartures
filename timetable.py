@@ -44,12 +44,12 @@ def parse_html(json):
                                                    headsign=headsign, note=note)
     
 def main():
-    stops = [int(n) for n in argv[1:]]
+    stops = argv[1:]
     print(HTML_HEADER)
     
     Departures = []
-    for stop in stops:
-        data = get_stop_departures(stop, 5)
+    for stop_name in stops:
+        data = get_stop_departures(stop_name, 5)
         Departures += parse_departures(data)
     for timestamp, html in sorted(Departures):
         print(html)

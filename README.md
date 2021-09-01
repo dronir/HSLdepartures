@@ -15,7 +15,7 @@ based on the `Pipfile`.
 
 ## Example
 
-The file `example.html` in this repo was produced with the command line
+The file [`example.html`](example.html) in this repo was produced with the command line
 
 ```
 pipenv run python timetable.py 5 Kalervonkatu Sumatrantie > example.html

@@ -1,4 +1,4 @@
-{
+{  
   stops(name: "$ID") {
     stoptimesWithoutPatterns(numberOfDepartures: $N) {
       stop {name}

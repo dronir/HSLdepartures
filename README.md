@@ -5,16 +5,12 @@ This is a simple Python script that takes a number and a list of stop names from
 asks the HSL API for the next five departures from those stops, and outputs a bare-boned
 HTML page with the departures organized in a table.
 
-## Setup
+## Install
 
-Easiest would be with [Pipenv](https://pipenv.pypa.io/en/latest/).
-Run `pipenv install` to install the dependencies from the `Pipfile`
-and create a virtual environment for running the code.
+You need Python 3.6+ with [requests](https://docs.python-requests.org/en/master/).
 
-But right now the only dependency is [requests](https://docs.python-requests.org/en/master/)
-so you can just install that any other way and run the code.
-
-Requires Python 3.6 or higher, I think. Only tested on 3.9 right now.
+To run it "properly", use [Pipenv](https://pipenv.pypa.io/en/latest/).
+Run `pipenv install` to create a new virtualenv and install the dependencies from the `Pipfile`.
 
 ## Example
 
@@ -25,3 +21,6 @@ pipenv run python timetable.py 5 Kalervonkatu Sumatrantie > example.html
 ```
 
 It prints out the HTML page with the next 5 departures from these two stops combined.
+
+If you're not using Pipenv, just omit the `pipenv run`, as long as you're in a
+Python 3.6+ environment with `requests` installed.

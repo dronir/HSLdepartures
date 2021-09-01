@@ -10,7 +10,8 @@ HTML page with the departures organized in a table.
 You need Python 3.6+ with [requests](https://docs.python-requests.org/en/master/).
 
 To run it "properly", use [Pipenv](https://pipenv.pypa.io/en/latest/).
-Run `pipenv install` to create a new virtualenv and install the dependencies from the `Pipfile`.
+Run `pipenv install` to create a new virtualenv and install the dependencies (just `requests`…)
+based on the `Pipfile`.
 
 ## Example
 
